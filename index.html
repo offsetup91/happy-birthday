@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Hira! 🎂</title>
+  <meta name="description" content="A playful yet elegant birthday page — music, fireworks, confetti, balloons, and heartfelt wishes for Hira." />
+  <link rel="preload" as="image" href="girl.jpg" />
+  <link rel="preload" as="audio" href="birthday.mp3" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient gradient blobs -->
+  <div class="blob b1" aria-hidden="true"></div>
+  <div class="blob b2" aria-hidden="true"></div>
+  <div class="blob b3" aria-hidden="true"></div>
+
+  <!-- Sparkles layer -->
+  <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+
+  <!-- Fireworks canvas -->
+  <canvas class="fireworks" aria-hidden="true"></canvas>
+
+  <!-- Mute / Unmute -->
+  <button id="btnMute" class="mute" aria-label="Toggle sound" aria-pressed="false">🔊</button>
+
+  <main class="wrap" role="main">
+    <article class="card" aria-live="polite">
+      <!-- Intro -->
+      <header class="intro">
+        <figure class="polaroid">
+          <img src="girl.jpg" alt="Hira smiling on her birthday" class="hero-img" width="640" height="640" />
+          <figcaption>Hira • Make a wish ✨</figcaption>
+        </figure>
+
+        <h1 class="heading">Happy Birthday, Hira! <span aria-hidden="true">🎂</span></h1>
+        <p class="sub">A tiny party in your browser — elegant, playful, and made just for you.</p>
+
+        <div class="controls" role="group" aria-label="Primary control">
+          <button id="btnCelebrate" class="btn">🎉 Celebrate</button>
+        </div>
+      </header>
+
+      <!-- Reveal on click -->
+      <section id="reveal" class="hidden" aria-hidden="true">
+        <div class="divider" aria-hidden="true"></div>
+
+        <h2 class="sr-only">Birthday Message</h2>
+        <div class="msg reveal-block">
+          <p><strong>Happy birthday, Dentist + CSM + Celebrity + Pagal! 🎉❤️</strong></p>
+          <p>
+            From being an amazing CSM who works so hard, to brightening smiles as a
+            dentist, creating fantastic content that makes everybody laugh and inspire,
+            and expressing your artistic soul through beautiful creations — you truly do it all! 🎨✨
+          </p>
+          <p>Your energy is absolutely infectious! 😄💫</p>
+          <p>
+            Here's to celebrating YOU — the hardworking professional, the creative genius, the caring healer,
+            and the absolutely delightful friend who makes life so much brighter!
+            Your kindness touches everyone lucky enough to know you. 🌈
+          </p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Music (starts on Celebrate) -->
+  <audio id="bgMusic" src="birthday.mp3" preload="auto" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
