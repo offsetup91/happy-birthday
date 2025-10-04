@@ -41,31 +41,39 @@ body{
 @media (prefers-reduced-motion: reduce){ .card{ animation:none } }
 @keyframes float{ 0%,100%{ transform:translateY(0) }50%{ transform:translateY(-8px) } }
 
+/* Center the intro block & photo */
+.intro{
+  display:flex;
+  flex-direction:column;
+  align-items:center;     /* centers horizontally */
+  text-align:center;      /* centers heading text */
+}
+
 /* Polaroid image */
 .polaroid{
-  display:inline-block; text-align:center; margin:6px auto 4px;
+  display:inline-block; text-align:center; margin:10px auto 8px;
   background:#fff; border-radius:14px; padding:10px 10px 14px;
   box-shadow:0 16px 40px #0003, inset 0 1px 0 #fff8;
-  transform:rotate(-1.4deg); transition: transform .3s ease;
+  transform:rotate(-1.2deg); transition: transform .3s ease;
 }
 .polaroid:hover{ transform:rotate(0deg) translateY(-2px); }
-.polaroid figcaption{ color:#6b7280; font-size:.9rem; margin-top:6px; }
 
+/* Bigger centered hero image (square) */
 .hero-img{
-  width:min(62vw, 280px); height:auto;
+  width:min(80vw, 360px);       /* centered size */
+  aspect-ratio:1/1;             /* keeps it square */
+  height:auto;
   border-radius:12px; display:block; margin:0 auto;
   box-shadow:0 10px 28px #0003; object-fit:cover;
 }
 
 .heading{
-  font-size: clamp(2rem, 5.5vw, 3.6rem); line-height:1.05; margin:10px 0 8px; font-weight:900;
+  font-size: clamp(2rem, 5.5vw, 3.6rem); line-height:1.05; margin:8px 0 10px; font-weight:900;
   background: conic-gradient(from 0.25turn, var(--p1), var(--p2), var(--p3), var(--p4), var(--p1));
   background-size:200% 200%; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
   animation:shine 6s ease-in-out infinite; text-align:center;
 }
 @keyframes shine{ 0%,100%{ background-position:0% 50% } 50%{ background-position:100% 50% } }
-
-.sub{ text-align:center; color:var(--muted); font-size:clamp(.95rem,1.8vw,1.1rem); margin:0 0 10px; }
 
 .controls{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; align-items:center; margin:12px 0 14px; }
 
@@ -80,7 +88,7 @@ body{
 /* Divider */
 .divider{ height:1px; background:linear-gradient(90deg, transparent, #ffffff66, transparent); margin:16px 0 }
 
-/* Message & reveal blocks */
+/* Message reveal */
 .msg{ margin:12px auto 16px; font-size:clamp(1.05rem,2.2vw,1.18rem); line-height:1.65; text-align:left; max-width:66ch }
 .reveal-block{ opacity:0; transform: translateY(10px); animation:reveal .8s ease forwards; }
 @keyframes reveal{ to{ opacity:1; transform:none } }

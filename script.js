@@ -168,7 +168,7 @@ async function startCelebration() {
     if ((volley++) > 18) clearInterval(fwTimer);
   }, 320);
 
-  // Optional: smooth scroll to message
+  // Smooth scroll to message
   const y = reveal.getBoundingClientRect().top + window.scrollY - 16;
   window.scrollTo({ top: y, behavior: prefersReduced ? "auto" : "smooth" });
 }
