@@ -1,2 +1,2 @@
-# hira-s-birthday
+# happy-birthday
 birthday message
